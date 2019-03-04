@@ -1,7 +1,6 @@
 
-var shuffleSequence = seq(  "preload",
-
-
+var shuffleSequence = seq(  "preload", "item", "sr"
+                          
                             );
 
 var defaults = [
