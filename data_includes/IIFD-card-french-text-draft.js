@@ -1,5 +1,5 @@
 
-var shuffleSequence = seq(  "preload", "item", "sr"
+var shuffleSequence = seq(  "item",
 
                             );
 
