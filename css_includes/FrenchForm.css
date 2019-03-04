@@ -1,0 +1,11 @@
+.error-text {
+    color: red;
+    font-weight: bold;
+}
+p.progress-text {
+    padding-top: 0.5em;
+    margin-top: 0;
+    margin-bottom: 2em;
+    font-style: italic;
+    font-size: small;
+}
