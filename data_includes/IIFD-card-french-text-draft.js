@@ -23,6 +23,8 @@ var items = [
 
     ["item",
           "MyTime", {},
+        "FrenchMessage",  {html: {include: 'domain.html'}},
+          "MyTime", {},
         "FrenchMessage",  {html: {include: 'clue_two.html'}},
           "MyTime", {},
         "FrenchMessage",  {html: {include: 'clue_two.html'}},
