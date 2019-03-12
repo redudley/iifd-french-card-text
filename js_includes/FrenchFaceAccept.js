@@ -79,7 +79,7 @@ jqueryWidget: {
                 this.utils.setValueForNextElement("failed", true);
             }
         }
-        // 
+        //
         // if (this.question) {
         //     this.qp = $(document.createElement("p"))
         //     .addClass(this.cssPrefix + "sentence")
@@ -268,7 +268,7 @@ jqueryWidget: {
 },
 
 properties: {
-    obligatory: [as"],
+    obligatory: ["as"],
     htmlDescription: function(opts) {
         return $(document.createElement("div")).text(opts.s || "");
     }
