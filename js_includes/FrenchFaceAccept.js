@@ -79,17 +79,17 @@ jqueryWidget: {
                 this.utils.setValueForNextElement("failed", true);
             }
         }
-
-        if (this.question) {
-            this.qp = $(document.createElement("p"))
-            .addClass(this.cssPrefix + "sentence")
-            .css('text-align', conf_centerItems ? 'center' : 'left')
-            .append(this.question);
-        }
-        this.xl = $(document.createElement(((!this.presentAsScale && !this.presentHorizontally) && this.showNumbers) ? "ol" : "ul"))
-            .css('margin-left', "1em").css('padding-left', 0);
-        __Question_answers__ = new Array(this.answers.length);
-
+        // 
+        // if (this.question) {
+        //     this.qp = $(document.createElement("p"))
+        //     .addClass(this.cssPrefix + "sentence")
+        //     .css('text-align', conf_centerItems ? 'center' : 'left')
+        //     .append(this.question);
+        // }
+        // this.xl = $(document.createElement(((!this.presentAsScale && !this.presentHorizontally) && this.showNumbers) ? "ol" : "ul"))
+        //     .css('margin-left', "1em").css('padding-left', 0);
+        // __Question_answers__ = new Array(this.answers.length);
+        //
 
         for (var i = 0; i < this.orderedAnswers.length; ++i) {
             var li;
