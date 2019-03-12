@@ -28,9 +28,9 @@ var items = [
 
           //instructions items
       "item",
-        "FrenchMessage",  {html: {include: 'domain.html'}},
-        "FrenchMessage",  {html: {include: 'clue_two.html'}},
-        "FrenchMessage",  {html: {include: 'clue_two.html'}},
+//        "FrenchMessage",  {html: {include: 'domain.html'}},
+//        "FrenchMessage",  {html: {include: 'clue_two.html'}},
+//        "FrenchMessage",  {html: {include: 'clue_two.html'}},
         "FrenchFaceAccept", {html: {include: 'image_choice.html'},
                       as:   [["D","https://imgur.com/wBdDYxX.png"], //4c4s - true
                             ["K","https://imgur.com/hPPmspP.png"]]},]
