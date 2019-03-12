@@ -1,22 +1,4 @@
-define_ibex_controller({
-    name: "FrenchFaceAccept",
 
-    jqueryWidget: {
-        _init: function () {
-            this.options.transfer = null; // Remove ’click to continue message’.
-            this.element.VBox({
-                options: this.options,
-                triggers: [1],
-                children: [
-                    "FrenchMessage", this.options,
-                    "FrenchPictureAccept", this.options,
-                ]
-            });
-        }
-    },
-
-    properties: { }
-});
 
 
 var shuffleSequence = seq(  "item",
@@ -31,6 +13,10 @@ var defaults = [
     "FrenchForm", {
         hideProgressBar: false,
         continueOnReturn: true,
+    },
+    "FrenchFaceAccept", {
+        hideProgressBar: true,
+        randomOrder: false,
     },
 ];
 
