@@ -40,7 +40,7 @@ var items = [
           "MyTime", {},
         "FrenchFaceAccept", {html: {include: 'image_choice.html'},
                       as:   [["D","https://imgur.com/wBdDYxX.png"], //4c4s - true
-                            ["K","https://imgur.com/hPPmspP.png"]]},}
+                            ["K","https://imgur.com/hPPmspP.png"]]},
           "MyTime", {}]
 
           //finished message w/ code
