@@ -29,7 +29,7 @@ var items = [
           "MyTime", {},
         "FrenchMessage",  {html: {include: 'clue_two.html'}},
           "MyTime", {},
-        "FrenchForm",  {html: {include: 'image_choice.html'}},
+        "FrenchMessage",  {html: {include: 'image_choice.html'}},
           "MyTime", {}]
 
 
