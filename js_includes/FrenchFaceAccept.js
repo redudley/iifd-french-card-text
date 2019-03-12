@@ -6,8 +6,8 @@
 
 (function () {
 
-var __Question_callback__ = null;
-var __Questions_answers__ = null;
+var __html_callback__ = null;
+var __htmls_answers__ = null;
 
 define_ibex_controller({
 name: "FrenchFaceJudgment",
@@ -18,12 +18,12 @@ jqueryWidget: {
         this.utils = this.options._utils;
         this.finishedCallback = this.options._finishedCallback;
 
-        var questionField = "Domain";
+        var htmlField = "Domain";
         var answerField = "Chosen face (1 is good, 2 is bad)";
         var correctField = "Whether or not answer was correct (NULL if N/A)";
         var timeField = "Time taken to answer.";
 
-        this.question = dget(this.options, "html");
+        this.html = dget(this.options, "html");
         this.answers = this.options.as;
         assert(this.answers.length == 2, "FrenchFaceJudgment only works with 2 pictures!");
 
@@ -79,17 +79,17 @@ jqueryWidget: {
                 this.utils.setValueForNextElement("failed", true);
             }
         }
-        //
-        // if (this.question) {
-        //     this.qp = $(document.createElement("p"))
-        //     .addClass(this.cssPrefix + "sentence")
-        //     .css('text-align', conf_centerItems ? 'center' : 'left')
-        //     .append(this.question);
-        // }
-        // this.xl = $(document.createElement(((!this.presentAsScale && !this.presentHorizontally) && this.showNumbers) ? "ol" : "ul"))
-        //     .css('margin-left', "1em").css('padding-left', 0);
-        // __Question_answers__ = new Array(this.answers.length);
-        //
+
+        if (this.html) {
+            this.qp = $(document.createElement("p"))
+            .addClass(this.cssPrefix + "sentence")
+            .css('text-align', conf_centerItems ? 'center' : 'left')
+            .append(this.html);
+        }
+        this.xl = $(document.createElement(((!this.presentAsScale && !this.presentHorizontally) && this.showNumbers) ? "ol" : "ul"))
+            .css('margin-left', "1em").css('padding-left', 0);
+        __html_answers__ = new Array(this.answers.length);
+
 
         for (var i = 0; i < this.orderedAnswers.length; ++i) {
             var li;
@@ -114,7 +114,7 @@ jqueryWidget: {
                 li.addClass(this.cssPrefix + "normal-answer");
             }
             (function(i) {
-                li.click(function () { __Question_callback__(i); });
+                li.click(function () { __html_callback__(i); });
             })(i);
             var ans = typeof(this.orderedAnswers[i]) == "string" ? this.orderedAnswers[i] : this.orderedAnswers[i][1];
             var m = this.orderedAnswers[i][0]
@@ -122,10 +122,10 @@ jqueryWidget: {
             var t = this; // 'this' doesn't behave as a lexically scoped variable so can't be
                           // captured in the closure defined below.
             var a = $(document.createElement("span")).addClass(this.cssPrefix + "fake-link");
-            __Question_answers__[i] = ans;
-            __Question_callback__ = function (i) {
+            __html_answers__[i] = ans;
+            __html_callback__ = function (i) {
                 var answerTime = new Date().getTime();
-                var ans = __Question_answers__[i];
+                var ans = __html_answers__[i];
                 var resultsAns = (i+1).toString();
                 var correct = "NULL";
                 if (! (t.hasCorrect === false)) {
@@ -133,7 +133,7 @@ jqueryWidget: {
                     correct = (ans == correct_ans ? 1 : 0);
                     t.setFlag(correct);
                 }
-                t.finishedCallback([[[questionField, t.question ? csv_url_encode(t.question) : "NULL"],
+                t.finishedCallback([[[htmlField, t.html ? csv_url_encode(t.html) : "NULL"],
                                      [answerField, csv_url_encode(resultsAns)],
                                      [correctField, correct],
                                      [timeField, answerTime - t.creationTime]]]);
@@ -176,7 +176,7 @@ jqueryWidget: {
             this.utils.setTimeout(function () {
                 var answerTime = new Date().getTime();
                 t.setFlag(false);
-                t.finishedCallback([[[questionField, t.question ? csv_url_encode(t.question) : "NULL"],
+                t.finishedCallback([[[htmlField, t.html ? csv_url_encode(t.html) : "NULL"],
                                      [answerField, "NULL"], [correctField, "NULL"],
                                      [timeField, answerTime - t.creationTime]]]);
             }, this.timeout);
@@ -202,7 +202,7 @@ jqueryWidget: {
                         correct = (correct_ans == ans ? 1 : 0);
                         t.setFlag(correct);
                     }
-                    t.finishedCallback([[[questionField, t.question ? csv_url_encode(t.question) : "NULL"],
+                    t.finishedCallback([[[htmlField, t.html ? csv_url_encode(t.html) : "NULL"],
                                          [answerField, csv_url_encode(resultsAns)],
                                          [correctField, correct],
                                          [timeField, answerTime - t.creationTime]]]);
@@ -250,7 +250,7 @@ jqueryWidget: {
                         correct = (correct_ans == ans ? 1 : 0);
                         t.setFlag(correct);
                     }
-                    t.finishedCallback([[[questionField, t.question ? csv_url_encode(t.question) : "NULL"],
+                    t.finishedCallback([[[htmlField, t.html ? csv_url_encode(t.html) : "NULL"],
                                          [answerField, csv_url_encode(resultsAns)],
                                          [correctField, correct],
                                          [timeField, answerTime - t.creationTime]]]);
