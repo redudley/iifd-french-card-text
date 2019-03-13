@@ -31,7 +31,7 @@ var items = [
 //        "FrenchMessage",  {html: {include: 'domain.html'}},
 //        "FrenchMessage",  {html: {include: 'clue_two.html'}},
 //        "FrenchMessage",  {html: {include: 'clue_two.html'}},
-        "FrenchPictureAccept", {s: {include: 'image_choice.html'},
+        "FrenchPictureAccept", {s: {html: {include: 'image_choice.html'}},
                       as:   [["D","https://imgur.com/wBdDYxX.png"], //4c4s - true
                             ["K","https://imgur.com/hPPmspP.png"]]},]
 
