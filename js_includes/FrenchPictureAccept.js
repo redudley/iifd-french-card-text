@@ -268,7 +268,7 @@ jqueryWidget: {
 },
 
 properties: {
-    obligatory: ["as"],
+    obligatory: ["s", "as"],
     htmlDescription: function(opts) {
         return $(document.createElement("div")).text(opts.s || "");
     }
