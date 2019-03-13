@@ -18,12 +18,14 @@ jqueryWidget: {
         this.utils = this.options._utils;
         this.finishedCallback = this.options._finishedCallback;
 
-        var questionField = "Sentence";
-        var answerField = "Chosen picture (Starting from 1)";
+        var htmlField = "Object of judgment";
+        var answerField = "Chosen face (1 for good or 2 for bad)";
         var correctField = "Whether or not answer was correct (NULL if N/A)";
         var timeField = "Time taken to answer.";
 
-        this.question = dget(this.options, "html");
+        this.html = this.options.html;
+        this.element.addClass(this.cssPrefix + "message");
+        this.element.append(htmlCodeToDOM(this.html));
         this.answers = this.options.as;
         //assert(this.answers.length == 2, "PictureAccept only works with 2 pictures!");
 
@@ -268,9 +270,9 @@ jqueryWidget: {
 },
 
 properties: {
-    obligatory: ["as"],
+    obligatory: ["html", "as"],
     htmlDescription: function(opts) {
-        return $(document.createElement("div")).text(opts.html || "");
+        return truncateHTML(htmlCodeToDOM(opts.html), 100);
     }
 }
 });
